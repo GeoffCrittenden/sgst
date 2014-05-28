@@ -1,26 +1,29 @@
-<header>
-  <h1>Suggestion Box</h1>
-  <a href="">Login</a>
-</header>
+<div class="container">
+  <header>
+    <h1>Suggestion Box</h1>
+    <a href="">Login</a>
+  </header>
 
-<div class="signup">
-  <%= form_for :user, url: url_for(controller: 'users', action: 'signup') do |f| %>
-    <p><%= f.text_field :email, placeholder: 'enter your email' %></p>
-    <p><%= f.submit 'Create Account' %></p>
-  <% end %>
-</div>
+  <div class="signup">
+    <p>Sign Up</p>
+    <%= form_for :user, url: url_for(controller: 'users', action: 'signup') do |f| %>
+      <p><%= f.text_field :email, placeholder: 'enter your email' %></p>
+      <p><%= f.submit 'Create Account' %></p>
+    <% end %>
+  </div>
 
-<div class="welcome">
-  <p>Welcome to Suggestion Box, a place where you can create meaningful suggestions intended for almost any target entity.  Suggestion Box is a community of passionate users seeking to make the world a better place.</p>
-  <p>Once you create a suggestion, it is not immediately sent off.  Only after gathering some useful feedback for your suggestion can you submit it to your target audience for consideration.  This way, the suggestion has more meaning and the full weight of a community behind it.</p>
-  <button>Create Your First Suggestion!</button>
-</div>
+  <div class="welcome">
+    <p>Welcome to Suggestion Box, a place where you can create meaningful suggestions intended for almost any target entity.  Suggestion Box is a community of passionate users seeking to make the world a better place.</p>
+    <p>Once you create a suggestion, it is not immediately sent off.  Only after gathering some useful feedback for your suggestion can you submit it to your target audience for consideration.  This way, the suggestion has more meaning and the full weight of a community behind it.</p>
+    <button>Create Your First Suggestion!</button>
+  </div>
 
-<div>
-  <h2>See some recent Suggestions</h2>
-  <% @suggestions.each_with_index do |s,i| %>
-    <% location = "" %>
-    <% location = " (#{User.find(s.owner_id).location}) " if s.local %>
-    <p><%= link_to "#{i + 1}. #{s.target}#{location} - #{s.title}", suggestion_path(s.id) %></p>
-  <% end %>
+  <div class="recent">
+    <h2>See some recent Suggestions</h2>
+    <% @suggestions.each_with_index do |s,i| %>
+      <% location = "" %>
+      <% location = " (#{User.find(s.owner_id).location}) " if s.local %>
+      <p><%= link_to "#{i + 1}. #{s.target}#{location} - #{s.title}", suggestion_path(s.id) %></p>
+    <% end %>
+  </div>
 </div>
