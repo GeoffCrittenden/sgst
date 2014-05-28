@@ -1,3 +1,10 @@
 <header>
   <h1>Suggestion Box</h1>
 </header>
+
+<div>
+  <h2>Recent Suggestions</h2>
+  <% @suggestions.each_with_index do |s,i| %>
+    <p><%= "#{i + 1}. #{s.target} - #{s.title}" %></p>
+  <% end %>
+</div>
