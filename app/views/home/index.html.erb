@@ -6,8 +6,14 @@
 <div class="signup">
   <%= form_for :user, url: url_for(controller: 'users', action: 'signup') do |f| %>
     <p><%= f.text_field :email, placeholder: 'enter your email' %></p>
-    <p><%= f.submit 'Sign Up' %></p>
+    <p><%= f.submit 'Create Account' %></p>
   <% end %>
+</div>
+
+<div class="welcome">
+  <p>Welcome to Suggestion Box, a place where you can create meaningful suggestions intended for almost any target entity.  Suggestion Box is a community of passionate users seeking to make the world a better place.</p>
+  <p>Once you create a suggestion, it is not immediately sent off.  Only after gathering some useful feedback for your suggestion can you submit it to your target audience for consideration.  This way, the suggestion has more meaning and the full weight of a community behind it.</p>
+  <button>Create Your First Suggestion!</button>
 </div>
 
 <div>
