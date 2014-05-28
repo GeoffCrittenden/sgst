@@ -8,4 +8,6 @@
   <p><%= User.find(c.owner_id).first_name %> <%= User.find(c.owner_id).last_name %> said:<br><%= c.body %></p>
 <% end %>
 
-<%= link_to 'Go Home', root_path %>
+<p><%= link_to 'Add a comment', new_suggestion_comment_path(suggestion_id: params[:id]) %></p>
+
+<p><%= link_to 'Go Home', root_path %></p>
