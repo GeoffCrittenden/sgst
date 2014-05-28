@@ -1,9 +1,10 @@
 <header>
   <h1>Suggestion Box</h1>
+  <a href="">Login</a>
 </header>
 
 <div>
-  <h2>Recent Suggestions</h2>
+  <h2>See some recent Suggestions</h2>
   <% @suggestions.each_with_index do |s,i| %>
     <% location = "" %>
     <% location = " (#{User.find(s.owner_id).location}) " if s.local %>
