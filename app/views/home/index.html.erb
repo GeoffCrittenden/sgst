@@ -4,7 +4,7 @@
 </header>
 
 <div class="signup">
-  <%= form_for :user, url: users_path do |f| %>
+  <%= form_for :user, url: url_for(controller: 'users', action: 'signup') do |f| %>
     <p><%= f.text_field :email, placeholder: 'enter your email' %></p>
     <p><%= f.submit %></p>
   <% end %>
