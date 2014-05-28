@@ -5,6 +5,8 @@
 <div>
   <h2>Recent Suggestions</h2>
   <% @suggestions.each_with_index do |s,i| %>
-    <p><%= link_to "#{i + 1}. #{s.target} - #{s.title}", suggestion_path(s.id) %></p>
+    <% location = "" %>
+    <% location = " (#{User.find(s.owner_id).location}) " if s.local %>
+    <p><%= link_to "#{i + 1}. #{s.target}#{location} - #{s.title}", suggestion_path(s.id) %></p>
   <% end %>
 </div>
