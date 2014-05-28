@@ -3,6 +3,10 @@ class SuggestionsController < ApplicationController
     
   end
 
+  def new
+    
+  end
+
   def show
     @suggestion = Suggestion.find(params[:id])
     @comments = @suggestion.comments
