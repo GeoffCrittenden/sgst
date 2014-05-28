@@ -5,5 +5,6 @@ class SuggestionsController < ApplicationController
 
   def show
     @suggestion = Suggestion.find(params[:id])
+    @comments = @suggestion.comments
   end
 end
