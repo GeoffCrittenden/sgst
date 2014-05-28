@@ -5,6 +5,6 @@
 <div>
   <h2>Recent Suggestions</h2>
   <% @suggestions.each_with_index do |s,i| %>
-    <p><%= "#{i + 1}. #{s.target} - #{s.title}" %></p>
+    <p><%= link_to "#{i + 1}. #{s.target} - #{s.title}", suggestion_path(s.id) %></p>
   <% end %>
 </div>
