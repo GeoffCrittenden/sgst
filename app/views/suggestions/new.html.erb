@@ -1,0 +1,16 @@
+Create new Suggestion
+<%= form_for :suggestion, url: suggestions_path do |f| %>
+  <p><%= f.label :target %>
+    <%= f.text_field :target %>
+  </p>
+  <p><%= f.label :title %>
+    <%= f.text_field :title, placeholder: 'a short description of your suggestion' %>
+  </p>
+  <p><%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+  <p><%= f.label :local %>
+    <%= f.check_box :local %>
+  </p>
+  <p><%= f.submit 'Submit Your Suggestion!' %></p>
+<% end %>
