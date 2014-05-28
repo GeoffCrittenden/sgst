@@ -3,4 +3,14 @@ Create new user
   <p><%= f.label :email %>
     <%= f.text_field :email, value: @email %>
   </p>
+  <p><%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </p>
+  <p><%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </p>
+  <p><%= f.label :location %>
+    <%= f.text_field :location %>
+  </p>
+  <p><%= f.submit 'Create Your Account' %></p>
 <% end %>

@@ -6,7 +6,7 @@
 <div class="signup">
   <%= form_for :user, url: url_for(controller: 'users', action: 'signup') do |f| %>
     <p><%= f.text_field :email, placeholder: 'enter your email' %></p>
-    <p><%= f.submit %></p>
+    <p><%= f.submit 'Sign Up' %></p>
   <% end %>
 </div>
 
