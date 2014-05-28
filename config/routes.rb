@@ -12,7 +12,9 @@ Sgst::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  resources :suggestions
+  resources :comments
+  resources :users
 
   # Example resource route with options:
   #   resources :products do
