@@ -3,6 +3,13 @@
   <a href="">Login</a>
 </header>
 
+<div class="signup">
+  <%= form_for :user, url: users_path do |f| %>
+    <p><%= f.text_field :email, placeholder: 'enter your email' %></p>
+    <p><%= f.submit %></p>
+  <% end %>
+</div>
+
 <div>
   <h2>See some recent Suggestions</h2>
   <% @suggestions.each_with_index do |s,i| %>
