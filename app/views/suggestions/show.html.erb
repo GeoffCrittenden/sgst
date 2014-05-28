@@ -7,3 +7,5 @@
 <% @comments.each do |c| %>
   <p><%= User.find(c.owner_id).first_name %> <%= User.find(c.owner_id).last_name %> said:<br><%= c.body %></p>
 <% end %>
+
+<%= link_to 'Go Home', root_path %>

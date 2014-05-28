@@ -10,7 +10,9 @@ Create new Suggestion
     <%= f.text_area :body %>
   </p>
   <p><%= f.label :local %>
-    <%= f.check_box :local %>
+    <%= f.check_box :local, checked_value: true, unchecked_value: false %>
   </p>
   <p><%= f.submit 'Submit Your Suggestion!' %></p>
 <% end %>
+
+<%= link_to 'Go Home', root_path %>
