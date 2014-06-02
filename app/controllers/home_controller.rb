@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @suggestions = Suggestion.all[-10..-1].reverse
+    @suggestions = Suggestion.order(created_at: :desc).limit(10)
   end
 end
