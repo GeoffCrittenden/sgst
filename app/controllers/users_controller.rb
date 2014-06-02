@@ -5,7 +5,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create(email: params[:user][:email], first_name: params[:user][:first_name], last_name: params[:user][:last_name], location: params[:user][:location])
+    user = User.create(
+      email:                 params[:user][:email],
+      first_name:            params[:user][:first_name],
+      last_name:             params[:user][:last_name],
+      location:              params[:user][:location],
+      password:              params[:user][:password],
+      password_confirmation: params[:user][:password_confirmation]
+    )
     puts user.id
     redirect_to "/users/#{user.id}"
   end

@@ -12,6 +12,12 @@ Create new user
   <p><%= f.label :location %>
     <%= f.text_field :location %>
   </p>
+  <p><%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+  <p><%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </p>
   <p><%= f.submit 'Create Your Account' %></p>
 <% end %>
 
