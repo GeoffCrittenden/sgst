@@ -16,16 +16,16 @@ class SessionsController < ApplicationController
   private
 
   def authenticate!
-    @errors = []
+    @errors = {}
     if @user = User.find_by(email: params[:session][:email])
       if @user.password == params[:session][:password]
         return true
       else
-        @errors << "invalid password"
+        @errors[:password] = "invalid password"
         return false
       end
     else
-      @errors << "user does not exist"
+      @errors[:email] = "user does not exist"
       return false
     end
   end
