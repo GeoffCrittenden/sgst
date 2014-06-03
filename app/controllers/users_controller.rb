@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create(
+    user = User.new(
       email:                 params[:user][:email],
       first_name:            params[:user][:first_name],
       last_name:             params[:user][:last_name],
@@ -13,8 +13,14 @@ class UsersController < ApplicationController
       password:              params[:user][:password],
       password_confirmation: params[:user][:password_confirmation]
     )
-    puts user.id
-    redirect_to "/users/#{user.id}"
+    if user.save
+      redirect_to "/users/#{user.id}"
+    else
+      @errors = user.errors
+      p @errors
+      @email = params[:user][:email]
+      render(controller: 'users', action: 'signup')
+    end
   end
 
   def show
