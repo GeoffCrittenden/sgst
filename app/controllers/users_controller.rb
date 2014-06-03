@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def signup
     @email = params[:user][:email]
-    render
   end
 
   def create
@@ -24,6 +23,5 @@ class UsersController < ApplicationController
 
   def show
     @id = params[:id]
-    render
   end
 end
