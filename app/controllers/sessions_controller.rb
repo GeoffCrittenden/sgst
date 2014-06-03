@@ -1,16 +1,21 @@
 class SessionsController < ApplicationController
 
-  def signin
-    
+  def new
+    render('signin')
   end
 
   def create
     if authenticate!
-      session[:id]
+      session[:current_user_id] = @user.id
       redirect_to "/users/#{@user.id}"
     else
       render('signin')
     end
+  end
+
+  def signout
+    reset_session
+    redirect_to root_path
   end
 
   private
