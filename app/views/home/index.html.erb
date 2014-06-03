@@ -1,7 +1,11 @@
 <div class="container">
   <header>
     <h1>Suggestion Box</h1>
-    <%= link_to "Login", signin_path %>
+    <% if session[:current_user_id] %>
+      <%= link_to "Logout", signout_path %>
+    <% else %>
+      <%= link_to "Login", signin_path %>
+    <% end %>
   </header>
 
   <div class="signup">
