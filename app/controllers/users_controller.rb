@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     else
       @errors = @user.errors
       p @errors
-      render(controller: 'users', action: 'signup')
+      render('signup')
     end
   end
 
