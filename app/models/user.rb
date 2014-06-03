@@ -7,11 +7,20 @@ class User < ActiveRecord::Base
   has_many :suggestions
   has_many :comments
 
-  validates :email, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :password, confirmation: true
-  validates :password_confirmation, presence: true
+  validates :email, presence: true,
+                    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+
+  validates :first_name, presence: true,
+                         length: { minimum: 2 }
+  validates :last_name, presence: true,
+                         length: { minimum: 2 }
+
+  validates :password, presence: true,
+                       confirmation: true
+  validates :password_confirmation, presence: true,
+                                    length: { in: 8..20,
+                                    too_short: "must be at least 8 characters",
+                                    too_long: "must be 20 characters or less" }
 
   def password
     @password ||= Password.new(password_digest)
