@@ -1,24 +1,66 @@
-Create new user
+<h3>Create new user</h3>
 <% @errors ||= {} %>
 <% @user ||= User.new %>
 <%= form_for :user, url: users_path do |f| %>
   <p><%= f.label :email %>
-    <%= f.text_field :email, value: params[:user][:email] %> <span class="error"><%= @errors[:email][-1] if @errors[:email] %></span>
+    <%= f.text_field :email, value: params[:user][:email] %> 
+      <span class="error">
+        <% unless @errors[:email].nil? %>
+          <% @errors[:email].uniq.each do |error| %>
+            <%= error %><br>
+          <% end %>
+        <% end %>
+      </span>
   </p>
   <p><%= f.label :first_name %>
-    <%= f.text_field :first_name, value: @user[:first_name], autofocus: true %> <span class="error"><%= @errors[:first_name][-1] if @errors[:first_name] %></span>
+    <%= f.text_field :first_name, value: @user[:first_name], autofocus: true %> 
+      <span class="error">
+        <% unless @errors[:first_name].nil? %>
+          <% @errors[:first_name].uniq.each do |error| %>
+            <%= error %><br>
+          <% end %>
+        <% end %>
+      </span>
   </p>
   <p><%= f.label :last_name %>
-    <%= f.text_field :last_name, value: @user[:last_name] %> <span class="error"><%= @errors[:last_name][-1] if @errors[:last_name] %></span>
+    <%= f.text_field :last_name, value: @user[:last_name] %> 
+      <span class="error">
+        <% unless @errors[:last_name].nil? %>
+          <% @errors[:last_name].uniq.each do |error| %>
+            <%= error %><br>
+          <% end %>
+        <% end %>
+      </span>
   </p>
   <p><%= f.label :location %>
-    <%= f.text_field :location, value: @user[:location] %> (optional) <span class="error"><%= @errors[:location][-1] if @errors[:location] %></span>
+    <%= f.text_field :location, value: @user[:location] %> (optional) 
+      <span class="error">
+        <% unless @errors[:location].nil? %>
+          <% @errors[:location].uniq.each do |error| %>
+            <%= error %><br>
+          <% end %>
+        <% end %>
+      </span>
   </p>
   <p><%= f.label :password %>
-    <%= f.password_field :password %> <span class="error"><%= @errors[:password][-1] if @errors[:password] %></span>
+    <%= f.password_field :password %> 
+      <span class="error">
+        <% unless @errors[:password].nil? %>
+          <% @errors[:password].uniq.each do |error| %>
+            <%= error %><br>
+          <% end %>
+        <% end %>
+      </span>
   </p>
   <p><%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %> <span class="error"><%= @errors[:password_confirmation][-1] if @errors[:password_confirmation] %></span>
+    <%= f.password_field :password_confirmation %> 
+      <span class="error">
+        <% unless @errors[:password_confirmation].nil? %>
+          <% @errors[:password_confirmation].uniq.each do |error| %>
+            <%= error %><br>
+          <% end %>
+        <% end %>
+      </span>
   </p>
   <p><%= f.submit 'Create Your Account' %></p>
 <% end %>
