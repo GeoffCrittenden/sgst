@@ -6,6 +6,7 @@ Sgst::Application.routes.draw do
   root 'home#index'
 
   post 'signup' => 'users#signup'
+  get 'signin' => 'sessions#signin'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -18,6 +19,7 @@ Sgst::Application.routes.draw do
     resources :comments
   end
   resources :users
+  resources :sessions
 
   # Example resource route with options:
   #   resources :products do
