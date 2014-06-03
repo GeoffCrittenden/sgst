@@ -6,7 +6,8 @@ Sgst::Application.routes.draw do
   root 'home#index'
 
   post 'signup' => 'users#signup'
-  get 'signin' => 'sessions#signin'
+  get 'signin' => 'sessions#new'
+  get 'signout' => 'sessions#signout'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
