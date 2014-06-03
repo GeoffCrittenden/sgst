@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :comments
 
   validates :email, presence: true,
+                    uniqueness: true,
                     format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
   validates :first_name, presence: true,
