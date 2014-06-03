@@ -7,6 +7,12 @@ class User < ActiveRecord::Base
   has_many :suggestions
   has_many :comments
 
+  validates :email, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :password, confirmation: true
+  validates :password_confirmation, presence: true
+
   def password
     @password ||= Password.new(password_digest)
   end
