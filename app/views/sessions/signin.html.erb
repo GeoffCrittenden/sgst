@@ -1,6 +1,6 @@
 <h3>Login</h3>
 <% @errors ||= {} %>
-<% @user ||= User.new %>
+<% @user ||= {} %>
 <%= form_for :session, url: sessions_path do |f| %>
   <p>
     <%= f.label :email %>
