@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
         return false
       end
     else
-      @errors[:email] = "user does not exist"
+      @errors[:email] = "invalid username"
       return false
     end
   end
