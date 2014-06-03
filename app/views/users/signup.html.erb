@@ -1,17 +1,18 @@
 Create new user
 <% @errors ||= {} %>
+<% @user ||= User.new %>
 <%= form_for :user, url: users_path do |f| %>
   <p><%= f.label :email %>
-    <%= f.text_field :email, value: @email %> <span class="error"><%= @errors[:email][-1] if @errors[:email] %></span>
+    <%= f.text_field :email, value: params[:user][:email] %> <span class="error"><%= @errors[:email][-1] if @errors[:email] %></span>
   </p>
   <p><%= f.label :first_name %>
-    <%= f.text_field :first_name, autofocus: true %> <span class="error"><%= @errors[:first_name][-1] if @errors[:first_name] %></span>
+    <%= f.text_field :first_name, value: @user[:first_name], autofocus: true %> <span class="error"><%= @errors[:first_name][-1] if @errors[:first_name] %></span>
   </p>
   <p><%= f.label :last_name %>
-    <%= f.text_field :last_name %> <span class="error"><%= @errors[:last_name][-1] if @errors[:last_name] %></span>
+    <%= f.text_field :last_name, value: @user[:last_name] %> <span class="error"><%= @errors[:last_name][-1] if @errors[:last_name] %></span>
   </p>
   <p><%= f.label :location %>
-    <%= f.text_field :location %> <span class="error"><%= @errors[:location][-1] if @errors[:location] %></span>
+    <%= f.text_field :location, value: @user[:location] %> (optional) <span class="error"><%= @errors[:location][-1] if @errors[:location] %></span>
   </p>
   <p><%= f.label :password %>
     <%= f.password_field :password %> <span class="error"><%= @errors[:password][-1] if @errors[:password] %></span>
