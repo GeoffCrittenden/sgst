@@ -2,22 +2,22 @@ Create new user
 <% @errors ||= {} %>
 <%= form_for :user, url: users_path do |f| %>
   <p><%= f.label :email %>
-    <%= f.text_field :email, value: @email %> <%= @errors[:email][-1] if @errors[:email] %>
+    <%= f.text_field :email, value: @email %> <span class="error"><%= @errors[:email][-1] if @errors[:email] %></span>
   </p>
   <p><%= f.label :first_name %>
-    <%= f.text_field :first_name, autofocus: true %> <%= @errors[:first_name][-1] if @errors[:first_name] %>
+    <%= f.text_field :first_name, autofocus: true %> <span class="error"><%= @errors[:first_name][-1] if @errors[:first_name] %></span>
   </p>
   <p><%= f.label :last_name %>
-    <%= f.text_field :last_name %> <%= @errors[:last_name][-1] if @errors[:last_name] %>
+    <%= f.text_field :last_name %> <span class="error"><%= @errors[:last_name][-1] if @errors[:last_name] %></span>
   </p>
   <p><%= f.label :location %>
-    <%= f.text_field :location %> <%= @errors[:location][-1] if @errors[:location] %>
+    <%= f.text_field :location %> <span class="error"><%= @errors[:location][-1] if @errors[:location] %></span>
   </p>
   <p><%= f.label :password %>
-    <%= f.password_field :password %> <%= @errors[:password][-1] if @errors[:password] %>
+    <%= f.password_field :password %> <span class="error"><%= @errors[:password][-1] if @errors[:password] %></span>
   </p>
   <p><%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %> <%= @errors[:password_confirmation][-1] if @errors[:password_confirmation] %>
+    <%= f.password_field :password_confirmation %> <span class="error"><%= @errors[:password_confirmation][-1] if @errors[:password_confirmation] %></span>
   </p>
   <p><%= f.submit 'Create Your Account' %></p>
 <% end %>
