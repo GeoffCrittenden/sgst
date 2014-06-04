@@ -3,7 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .container {
+  margin: 0 auto;
   width: 60%;
+}
+
+.navbar {
+  background-color: cornflowerblue;
+  height: 80px;
+  width: 100%;
 }
 
 header h1 {

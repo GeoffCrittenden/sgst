@@ -1,12 +1,6 @@
+<%= render partial: "navbar" %>
+
 <div class="container">
-  <header>
-    <h1>Suggestion Box</h1>
-    <% if session[:current_user_id] %>
-      <%= link_to "Logout", signout_path %>
-    <% else %>
-      <%= link_to "Login", signin_path %>
-    <% end %>
-  </header>
 
   <div class="signup">
     <p>Sign Up</p>
@@ -30,4 +24,5 @@
       <p><%= link_to "#{i + 1}. #{s.target}#{location} - #{s.title}", suggestion_path(s.id) %></p>
     <% end %>
   </div>
+
 </div>
