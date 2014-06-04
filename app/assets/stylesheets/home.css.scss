@@ -54,11 +54,18 @@
 }
 
 .recent {
-  clear: both;
-  padding-left: 10%;
-  padding-right: 10%;
+  float: left;
+  padding-left: 9%;
+  padding-right: 10px;
   position: relative;
   top: 80px;
+  width: 40%;
+}
+
+.local {
+  float: right;
+  padding-left: 10px;
+  padding-right: 9%;
   width: 40%;
 }
 
