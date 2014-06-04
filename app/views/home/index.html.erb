@@ -26,7 +26,7 @@
     </div>
     <div class="recent local">
       <h2>See some recent Local Suggestions</h2>
-      <% @suggestions.each_with_index do |s,i| %>
+      <% @suggestions_local.each_with_index do |s,i| %>
         <% location = "" %>
         <% location = " (#{User.find(s.owner_id).location}) " if s.local %>
         <%= link_to raw("<p class='suggestion-link'>#{s.target}#{location} - #{s.title}</p>"), suggestion_path(s.id) %>
