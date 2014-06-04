@@ -21,7 +21,7 @@
       <% @suggestions.each_with_index do |s,i| %>
         <% location = "" %>
         <% location = " (#{User.find(s.owner_id).location}) " if s.local %>
-        <p><%= link_to "#{i + 1}. #{s.target}#{location} - #{s.title}", suggestion_path(s.id) %></p>
+        <p class="suggestion-link"><%= link_to "#{i + 1}. #{s.target}#{location} - #{s.title}", suggestion_path(s.id) %></p>
       <% end %>
     </div>
   </div>
