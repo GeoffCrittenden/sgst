@@ -1,0 +1,12 @@
+<div class="navbar">
+  <div class=container>
+    <header>
+      <h1><%= link_to "Suggestion Box", root_path %></h1>
+      <% if session[:current_user_id] %>
+        <%= link_to "Logout", signout_path %>
+      <% else %>
+        <%= link_to "Login", signin_path %>
+      <% end %>
+    </header>
+  </div>
+</div>

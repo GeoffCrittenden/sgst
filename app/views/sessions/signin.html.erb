@@ -1,26 +1,30 @@
-<h3>Login</h3>
-<% @errors ||= {} %>
-<% @user ||= {} %>
-<%= form_for :session, url: sessions_path do |f| %>
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email, value: @user[:email], autofocus: true %>
-      <span class="error">
-        <% unless @errors[:email].nil? %>
-          <%= @errors[:email] %>
-        <% end %>
-      </span>
-  </p>
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-      <span class="error">
-        <% unless @errors[:password].nil? %>
-            <%= @errors[:password] %>
-        <% end %>
-      </span>
-  </p>
-  <p>
-    <%= f.submit "Login!" %>
-  </p>
-<% end %>
+<%= render partial: "shared/navbar" %>
+
+<div class=container>
+  <h3>Login</h3>
+  <% @errors ||= {} %>
+  <% @user ||= {} %>
+  <%= form_for :session, url: sessions_path do |f| %>
+    <p>
+      <%= f.label :email %>
+      <%= f.text_field :email, value: @user[:email], autofocus: true %>
+        <span class="error">
+          <% unless @errors[:email].nil? %>
+            <%= @errors[:email] %>
+          <% end %>
+        </span>
+    </p>
+    <p>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+        <span class="error">
+          <% unless @errors[:password].nil? %>
+              <%= @errors[:password] %>
+          <% end %>
+        </span>
+    </p>
+    <p>
+      <%= f.submit "Login!" %>
+    </p>
+  <% end %>
+</div>

@@ -1,12 +1,14 @@
-Contribute a new Comment
-<%= form_for :comment, url: suggestion_comments_path do |f| %>
-  <p><%= f.label :body %>
-    <%= f.text_area :body %>
-  </p>
-  <p><%= f.label :vote %>
-    <%= f.check_box :vote, checked_value: -1, unchecked_value: 1 %>
-  </p>
-  <p><%= f.submit 'Submit Your Comment!' %></p>
-<% end %>
+<%= render partial: "shared/navbar" %>
 
-<%= link_to 'Go Home', root_path %>
+<div class="container">
+  Contribute a new Comment
+  <%= form_for :comment, url: suggestion_comments_path do |f| %>
+    <p><%= f.label :body %>
+      <%= f.text_area :body %>
+    </p>
+    <p><%= f.label :vote %>
+      <%= f.check_box :vote, checked_value: -1, unchecked_value: 1 %>
+    </p>
+    <p><%= f.submit 'Submit Your Comment!' %></p>
+  <% end %>
+</div>

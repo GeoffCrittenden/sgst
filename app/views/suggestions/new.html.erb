@@ -1,18 +1,20 @@
-Create new Suggestion
-<%= form_for :suggestion, url: suggestions_path do |f| %>
-  <p><%= f.label :target %>
-    <%= f.text_field :target %>
-  </p>
-  <p><%= f.label :title %>
-    <%= f.text_field :title, placeholder: 'a short description of your suggestion' %>
-  </p>
-  <p><%= f.label :body %>
-    <%= f.text_area :body %>
-  </p>
-  <p><%= f.label :local %>
-    <%= f.check_box :local, checked_value: true, unchecked_value: false %>
-  </p>
-  <p><%= f.submit 'Submit Your Suggestion!' %></p>
-<% end %>
+<%= render partial: "shared/navbar" %>
 
-<%= link_to 'Go Home', root_path %>
+<div class="container">
+  Create new Suggestion
+  <%= form_for :suggestion, url: suggestions_path do |f| %>
+    <p><%= f.label :target %>
+      <%= f.text_field :target %>
+    </p>
+    <p><%= f.label :title %>
+      <%= f.text_field :title, placeholder: 'a short description of your suggestion' %>
+    </p>
+    <p><%= f.label :body %>
+      <%= f.text_area :body %>
+    </p>
+    <p><%= f.label :local %>
+      <%= f.check_box :local, checked_value: true, unchecked_value: false %>
+    </p>
+    <p><%= f.submit 'Submit Your Suggestion!' %></p>
+  <% end %>
+</div>

@@ -13,7 +13,8 @@
  */
 
 body {
-  font-family: helvetica
+  font-family: helvetica;
+  margin: 0;
 }
 
 .error {

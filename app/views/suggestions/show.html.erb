@@ -1,13 +1,15 @@
-<h2><%= @suggestion.title %></h2>
+<%= render partial: "shared/navbar" %>
 
-<p>Target: <%= @suggestion.target %></p>
-<p>Suggestion:</p>
-<p><%= @suggestion.body %></p><br>
-<p>Comments:</p>
-<% @comments.each do |c| %>
-  <p><%= User.find(c.owner_id).first_name %> <%= User.find(c.owner_id).last_name %> said:<br><%= c.body %></p>
-<% end %>
+<div class="container">
+  <h2><%= @suggestion.title %></h2>
 
-<p><%= link_to 'Add a comment', new_suggestion_comment_path(suggestion_id: params[:id]) %></p>
+  <p>Target: <%= @suggestion.target %></p>
+  <p>Suggestion:</p>
+  <p><%= @suggestion.body %></p><br>
+  <p>Comments:</p>
+  <% @comments.each do |c| %>
+    <p><%= User.find(c.owner_id).first_name %> <%= User.find(c.owner_id).last_name %> said:<br><%= c.body %></p>
+  <% end %>
 
-<p><%= link_to 'Go Home', root_path %></p>
+  <p><%= link_to 'Add a comment', new_suggestion_comment_path(suggestion_id: params[:id]) %></p>
+</div>
