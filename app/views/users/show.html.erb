@@ -1,3 +1,5 @@
-<h1>Welcome, <%= "#{User.find(@id).first_name} #{User.find(@id).last_name}" %></h1>
+<%= render partial: "shared/navbar" %>
 
-<%= link_to 'Go Home', root_path %>
+<div class="container">
+  <h1>Welcome, <%= "#{User.find(@id).first_name} #{User.find(@id).last_name}" %></h1>
+</div>
