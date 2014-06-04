@@ -8,19 +8,25 @@
 }
 
 .navbar {
-  background: linear-gradient(356deg, blue, cornflowerblue);
+  background: linear-gradient(356deg, gray, cornflowerblue);
   height: 80px;
   width: 100%;
 }
 
-header h1 {
+header h1, header h1 a {
   float: left;
+  text-decoration: none;
 }
 
 header a {
   color: black;
+}
+
+header .navlink {
   float: right;
-  text-decoration: none;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
 }
 
 .signup {
