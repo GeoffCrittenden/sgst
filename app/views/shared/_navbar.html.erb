@@ -3,9 +3,9 @@
     <header>
       <h1><%= link_to "Suggestion Box", root_path %></h1>
       <% if session[:current_user_id] %>
-        <%= link_to "Logout", signout_path %>
+        <span class="navlink"><%= link_to "Logout", signout_path %></span>
       <% else %>
-        <%= link_to "Login", signin_path %>
+        <span class="navlink"><%= link_to "Login", signin_path %></span>
       <% end %>
     </header>
   </div>
