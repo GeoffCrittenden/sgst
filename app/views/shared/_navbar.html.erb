@@ -1,12 +1,8 @@
 <div class="navbar">
-  <div class=container>
-    <header>
-      <h1><%= link_to "Suggestion Box", root_path %></h1>
-      <% if session[:current_user_id] %>
-        <span class="navlink"><%= link_to "Logout", signout_path %></span>
-      <% else %>
-        <span class="navlink"><%= link_to "Login", signin_path %></span>
-      <% end %>
-    </header>
-  </div>
+  <h1><%= link_to "Suggestion Box", root_path %></h1>
+  <% if session[:current_user_id] %>
+    <span class="navlink"><%= link_to "Logout", signout_path %></span>
+  <% else %>
+    <span class="navlink"><%= link_to "Login", signin_path %></span>
+  <% end %>
 </div>
