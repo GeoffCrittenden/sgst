@@ -1,11 +1,11 @@
 Given(/^that a new user fills in the form$/) do
-  pending # express the regexp above with the code you wish you had
+  @user = User.new(email: 'example@email.com', first_name: 'Bob', last_name: 'Uncle', location: 'London, UK', password: 'password', password_confirmation: 'password')
 end
 
 When(/^user clicks signup$/) do
-  pending # express the regexp above with the code you wish you had
+  @user.save
 end
 
 Then(/^they should have an account$/) do
-  pending # express the regexp above with the code you wish you had
+  User.find_by(email: 'example@email.com').nil? == false
 end
