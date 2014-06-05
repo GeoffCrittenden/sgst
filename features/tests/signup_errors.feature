@@ -3,7 +3,6 @@ Feature: user receives errors when incorrectly filling out signup form
   The website
   Should inform them with error messages
 
-  Scenario: if a user leaves a field blank
-    Given that the user gives an incorrect input
-    When the user clicks submit
+  Scenario: if a user enters blank or invalid info
+    When a user submits an invalid signup form
     Then their account is not created and they receive an error message
