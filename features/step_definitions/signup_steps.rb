@@ -1,5 +1,10 @@
 Given(/^that a new user fills in the form$/) do
-  @user = User.new(email: 'example@email.com', first_name: 'Bob', last_name: 'Uncle', location: 'London, UK', password: 'password', password_confirmation: 'password')
+  @user = User.new(email: 'example@email.com',
+                   first_name: 'Bob',
+                   last_name: 'Uncle',
+                   location: 'London, UK',
+                   password: 'password',
+                   password_confirmation: 'password')
 end
 
 When(/^user clicks signup$/) do
