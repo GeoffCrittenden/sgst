@@ -37,6 +37,9 @@ gem 'faker'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Use RSpec for test-driven design
+gem 'rspec'
+
 # User Cucumber for behavior-driven design
 gem 'cucumber'
 
