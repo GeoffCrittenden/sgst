@@ -1,10 +1,10 @@
 Given(/^that the user gives an incorrect input$/) do
   @user = User.new(email: '',
-                      first_name: '',
-                      last_name: '',
-                      location: '',
-                      password: '',
-                      password_confirmation: '')
+                   first_name: '',
+                   last_name: '',
+                   location: '',
+                   password: '',
+                   password_confirmation: '')
 end
 
 When(/^the user clicks submit$/) do
