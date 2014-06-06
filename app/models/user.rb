@@ -8,8 +8,9 @@ class User < ActiveRecord::Base
   has_many :comments
 
   validates :email, presence: true,
-                    uniqueness: true,
-                    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+                    uniqueness: { message: "%{value} already in use by another account" },
+                    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,
+                              message: "email address is invalid" }
 
   validates :first_name, presence: true,
                          length: { minimum: 2 }
