@@ -5,7 +5,6 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore secret token
-/config/initializers/secret_token.rb
 
 # Ignore bundler config.
 /.bundle
