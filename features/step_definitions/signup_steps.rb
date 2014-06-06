@@ -12,5 +12,5 @@ When(/^user clicks signup$/) do
 end
 
 Then(/^they should have an account$/) do
-  User.find_by(email: 'example@email.com').nil? == false
+  User.find_by(email: 'example@email.com').should_not == nil
 end
