@@ -21,8 +21,7 @@ When(/^a user submits an invalid email address$/) do
   visit('/')
   fill_in 'user_email', :with => 'email'
   click_button('Create Account')
-  user = { email: 'email',
-           first_name: 'First',
+  user = { first_name: 'First',
            last_name: 'Last',
            location: 'Smallville, KS',
            password: 'password',
@@ -50,8 +49,7 @@ When(/^a user submits an email address already in use$/) do
   visit('/')
   fill_in 'user_email', :with => 'email@email.com'
   click_button('Create Account')
-  user = { email: 'email@email.com',
-           first_name: 'First',
+  user = { first_name: 'First',
            last_name: 'Last',
            location: 'Smallville, KS',
            password: 'password',
@@ -73,8 +71,7 @@ When(/^a user submits a single character first name$/) do
   visit('/')
   fill_in 'user_email', :with => 'email@email.com'
   click_button('Create Account')
-  user = { email: 'email@email.com',
-           first_name: 'F',
+  user = { first_name: 'F',
            last_name: 'Last',
            location: 'Smallville, KS',
            password: 'password',
