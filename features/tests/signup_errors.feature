@@ -22,3 +22,18 @@ Feature: user receives errors when incorrectly filling out signup form
     When a user submits a single character first name
     Then their new user account is not created
     And they receive a first name too short error message
+
+  Scenario: if a user enters a single character for their last name
+    When a user submits a single character last name
+    Then their new account is not created
+    And they receive a last name too short error message
+
+  Scenario: if a user enters a password under eight characters
+    When a user submits a password under eight characters
+    Then their user account is not created
+    And they receive a password too short error message
+
+  Scenario: if a user enters a password confirmation that does not match their password
+    When a user submits a password confirmation that does not match their password
+    Then a user account is not created
+    And they receive a does not match password error message
