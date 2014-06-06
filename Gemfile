@@ -37,12 +37,16 @@ gem 'faker'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 group :test do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem 'rspec'
 end
+
+gem 'gorilla_test-rails', require: 'gorilla_test'
 
 # Use unicorn as the app server
 # gem 'unicorn'
