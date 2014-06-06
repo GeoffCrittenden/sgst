@@ -11,4 +11,14 @@ Feature: user receives errors when incorrectly filling out signup form
   Scenario: if a user enters an invalid email address
     When a user submits an invalid email address
     Then their account is not created
-    And they receive an error message
+    And they receive an invalid email error message
+
+  Scenario: if a user enters an email address already in use
+    When a user submits an email address already in use
+    Then an account is not created
+    And they receive an already taken email error message
+
+  Scenario: if a user enters a single character for their first name
+    When a user submits a single character first name
+    Then their new user account is not created
+    And they receive a first name too short error message
