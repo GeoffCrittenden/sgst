@@ -5,4 +5,5 @@ Feature: user receives errors when incorrectly filling out signup form
 
   Scenario: if a user enters blank or invalid info
     When a user submits an invalid signup form
-    Then their account is not created and they receive an error message
+    Then their account is not created
+    And they receive an error message
