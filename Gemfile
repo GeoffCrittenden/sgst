@@ -48,6 +48,8 @@ end
 
 gem 'gorilla_test-rails', require: 'gorilla_test'
 
+gem 'rails_12factor', group: :production
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
