@@ -8,6 +8,7 @@ Sgst::Application.routes.draw do
   post 'signup' => 'users#signup'
   get 'signin' => 'sessions#new'
   get 'signout' => 'sessions#signout'
+  get 'verify_cancel' => 'users#verify_cancel'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
