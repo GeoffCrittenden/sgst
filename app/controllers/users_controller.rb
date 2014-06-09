@@ -13,6 +13,7 @@ class UsersController < ApplicationController
                      password:              params[:user][:password],
                      password_confirmation: params[:user][:password_confirmation])
     if @user.save
+      session[:current_user_id] = @user.id
       redirect_to "/users/#{@user.id}"
     else
       @errors = @user.errors
