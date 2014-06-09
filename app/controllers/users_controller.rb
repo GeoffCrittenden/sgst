@@ -24,4 +24,19 @@ class UsersController < ApplicationController
   def show
     @id = params[:id]
   end
+
+  def verify_cancel
+    @id = session[:current_user_id]
+  end
+
+  def destroy
+    if params[:id].to_i == session[:current_user_id]
+      User.find(session[:current_user_id]).destroy
+      reset_session
+      redirect_to root_path
+    else
+      @errors = "could not execute, account does not match current user"
+      render('verify_cancel')
+    end
+  end
 end
