@@ -16,7 +16,6 @@ class UsersController < ApplicationController
       redirect_to "/users/#{@user.id}"
     else
       @errors = @user.errors
-      p @errors
       render('signup')
     end
   end
