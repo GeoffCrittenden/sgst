@@ -5,7 +5,5 @@ Feature: account cancellation
 
   Scenario: a user wants to cancel their account
     Then their account page should have a 'cancel your account' link
-    When they click on 'cancel your account' on their user page
-    Then they should see an 'are you sure' message
-    When they click 'yes'
-    Then their account is destroyed
+    When they click on 'cancel your account' on their user page they should see an 'are you sure' message
+    When they click 'yes' their account is destroyed
