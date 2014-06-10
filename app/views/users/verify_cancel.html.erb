@@ -1,8 +1,8 @@
 <div class="container">
   <h1>Account Cancel</h1>
   <p>Are you sure that you want to close your account?</p>
-  <p><%= link_to "NO", user_path(id: session[:current_user_id]) %></p>
-  <p><%= link_to "YES", user_path(id: session[:current_user_id]), method: :delete %></p>
+  <p><%= link_to "NO", user_path(id: @id) %></p>
+  <p><%= link_to "YES", user_path(id: @id), method: :delete %></p>
   <% if @errors %>
     <p><%= @errors %></p>
   <% end %>

@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @id = params[:id]
+    @id = session[:current_user_id]
   end
 
   def verify_cancel
