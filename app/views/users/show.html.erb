@@ -4,6 +4,6 @@
     <h3><%= "#{User.find(@id).location}" %></h3>
   <% end %>
   <% if session[:current_user_id] == @id %>
-    <p><%= link_to "cancel your account", verify_cancel_path, method: :post %></p>
+    <p><%= link_to "cancel your account", verify_cancel_path %></p>
   <% end %>
 </div>

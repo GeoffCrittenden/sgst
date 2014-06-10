@@ -22,13 +22,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @id = session[:current_user_id]
     @id = params[:id].to_i
   end
 
   def verify_cancel
     @id = session[:current_user_id]
-    # @id = params[:id].to_i
   end
 
   def destroy
