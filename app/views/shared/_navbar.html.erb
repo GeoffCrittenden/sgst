@@ -2,9 +2,10 @@
   <h1><%= link_to "Suggestion Box", root_path %></h1>
   <ul class="navlinks">
     <% if session[:current_user_id] %>
-      <span class="navlink"><%= link_to "Logout", signout_path %></span>
+      <li class="navlink"><%= link_to "Account", user_path(id: session[:current_user_id]) %></li>
+      <li class="navlink"><%= link_to "Logout", signout_path %></li>
     <% else %>
-      <span class="navlink"><%= link_to "Login", signin_path %></span>
+      <li class="navlink"><%= link_to "Login", signin_path %></li>
     <% end %>
   </ul>
 </div>

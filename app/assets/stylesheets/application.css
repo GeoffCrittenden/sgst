@@ -45,6 +45,12 @@ body {
   text-align: center;
 }
 
+.navlink {
+  display: inline-block;
+  list-style: none;
+  margin-left: 20px;
+}
+
 .container {
   margin: 0 auto;
   position: absolute;
