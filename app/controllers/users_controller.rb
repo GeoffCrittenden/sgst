@@ -22,11 +22,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @id = session[:current_user_id]
+    # @id = session[:current_user_id]
+    @id = params[:id].to_i
   end
 
   def verify_cancel
     @id = session[:current_user_id]
+    # @id = params[:id].to_i
   end
 
   def destroy
@@ -36,6 +38,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       @errors = "could not execute, account does not match current user"
+      @id = params[:id].to_i
       render('verify_cancel')
     end
   end
