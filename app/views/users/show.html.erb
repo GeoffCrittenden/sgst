@@ -1,4 +1,9 @@
 <div class="container">
-  <h1>Welcome, <%= "#{User.find(@id).first_name} #{User.find(@id).last_name}" %></h1>
-  <p><%= link_to "cancel your account", verify_cancel_path, method: :post %></p>
+  <h1><%= "#{User.find(@id).first_name} #{User.find(@id).last_name}" %></h1>
+  <% if User.find(@id).location %>
+    <h3><%= "#{User.find(@id).location}" %></h3>
+  <% end %>
+  <% if session[:current_user_id] == @id %>
+    <p><%= link_to "cancel your account", verify_cancel_path, method: :post %></p>
+  <% end %>
 </div>
