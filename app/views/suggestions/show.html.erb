@@ -6,7 +6,7 @@
   <p><%= @suggestion.body %></p><br>
   <p>Comments:</p>
   <% @comments.each do |c| %>
-    <p><%= User.find(c.owner_id).first_name %> <%= User.find(c.owner_id).last_name %> said:<br><%= c.body %></p>
+    <p><%= User.find(c.user_id).first_name %> <%= User.find(c.user_id).last_name %> said:<br><%= c.body %></p>
   <% end %>
 
   <p><%= link_to 'Add a comment', new_suggestion_comment_path(suggestion_id: params[:id]) %></p>

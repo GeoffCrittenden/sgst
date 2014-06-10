@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602202516) do
+ActiveRecord::Schema.define(version: 20140528015540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: true do |t|
-    t.integer  "owner_id"
+    t.integer  "user_id"
     t.integer  "suggestion_id"
     t.integer  "vote"
     t.text     "body"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140602202516) do
   end
 
   create_table "suggestions", force: true do |t|
-    t.integer  "owner_id"
+    t.integer  "user_id"
     t.string   "target"
     t.string   "title"
     t.text     "body"
