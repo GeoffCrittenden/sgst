@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
+
   def signup
-    if params[:user][:email]
-      @email = params[:user][:email]
-    end
   end
 
   def create
