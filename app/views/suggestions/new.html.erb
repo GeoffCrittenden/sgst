@@ -1,18 +1,50 @@
 <div class="container">
-  Create new Suggestion
+  <h3>Create new Suggestion</h3>
+  <% @errors ||= {} %>
+  <% @suggestion ||= Suggestion.new %>
   <%= form_for :suggestion, url: suggestions_path do |f| %>
     <p><%= f.label :target %>
-      <%= f.text_field :target %>
+      <%= f.text_field :target, value: @suggestion[:target], autofocus: true %>
+        <span class="error">
+          <% unless @errors[:target].nil? %>
+            <% @errors[:target].uniq.each do |error| %>
+              <%= error %><br>
+            <% end %>
+          <% end %>
+        </span>
     </p>
     <p><%= f.label :title %>
       <%= f.text_field :title, placeholder: 'a short description of your suggestion' %>
+        <span class="error">
+          <% unless @errors[:title].nil? %>
+            <% @errors[:title].uniq.each do |error| %>
+              <%= error %><br>
+            <% end %>
+          <% end %>
+        </span>
     </p>
     <p><%= f.label :body %>
       <%= f.text_area :body %>
+        <span class="error">
+          <% unless @errors[:body].nil? %>
+            <% @errors[:body].uniq.each do |error| %>
+              <%= error %><br>
+            <% end %>
+          <% end %>
+        </span>
     </p>
-    <p><%= f.label :local %>
+    <p><%= f.label :local_only? %>
       <%= f.check_box :local, checked_value: true, unchecked_value: false %>
+      <br>(if you check this box, your Suggestion will be visible to everyone,<br>but only users in your local area will be able to submit comments)
     </p>
-    <p><%= f.submit 'Submit Your Suggestion!' %></p>
+    <p><%= f.submit 'Submit Your Suggestion!' %>
+      <span class="error">
+        <% unless @errors[:user_id].nil? %>
+          <% @errors[:user_id].uniq.each do |error| %>
+            <%= error %><br>
+          <% end %>
+        <% end %>
+      </span>
+    </p>
   <% end %>
 </div>
