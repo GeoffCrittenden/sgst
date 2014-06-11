@@ -3,6 +3,10 @@
   <% if User.find(@id).location %>
     <h3><%= "#{User.find(@id).location}" %></h3>
   <% end %>
+  <h2>Suggestions:</h2>
+  <% User.find(@id).suggestions.each do |s| %>
+    <p><%= link_to "#{s.title}", suggestion_path(id: s.id) %></p>
+  <% end %>
   <% if session[:current_user_id] == @id %>
     <p><%= link_to "cancel your account", verify_cancel_path %></p>
   <% end %>
