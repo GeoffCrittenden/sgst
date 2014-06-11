@@ -10,7 +10,16 @@ class UsersController < ApplicationController
                      location:              params[:user][:location],
                      password:              params[:user][:password],
                      password_confirmation: params[:user][:password_confirmation])
-    if @user.save
+    if @user.save && params[:user][:target]
+      session[:current_user_id] = @user.id
+      suggestion = Suggestion.create(user_id: session[:current_user_id],
+                                     target: params[:user][:target],
+                                     title: params[:user][:title],
+                                     body: params[:user][:body],
+                                     score: 1,
+                                     local: params[:user][:local])
+      redirect_to "/suggestions/#{suggestion.id}"
+    elsif @user.save
       session[:current_user_id] = @user.id
       redirect_to "/users/#{@user.id}"
     else
