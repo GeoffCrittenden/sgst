@@ -9,5 +9,11 @@
     <p><%= link_to raw("#{c.owner.first_name} #{c.owner.last_name}"), user_path(id: c.user_id) %> said:<br><%= c.body %></p>
   <% end %>
 
-  <p><%= link_to 'Add a comment', new_suggestion_comment_path(suggestion_id: params[:id]) %></p>
+  <p>
+    <% if session[:current_user_id] %>
+      <%= link_to 'Add a comment', new_suggestion_comment_path(suggestion_id: params[:id]) %>
+    <% else %>
+      You must <%= link_to 'signup', signup_path, method: :post %> or <%= link_to 'login', signin_path %> to contribute to the discussion.
+    <% end %>
+  </p>
 </div>
