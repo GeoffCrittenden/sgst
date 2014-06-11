@@ -40,4 +40,5 @@ class UsersController < ApplicationController
       render('verify_cancel')
     end
   end
+
 end
