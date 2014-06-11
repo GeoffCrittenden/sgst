@@ -1,10 +1,23 @@
 <div class="container"
   <h3>Create new user</h3>
+  <% if @message %>
+    <h4 class="error"><%= @message %></h4>
+  <% end %>
   <% @errors ||= {} %>
   <% @user ||= User.new %>
   <%= form_for :user, url: users_path do |f| %>
+    <% if @suggestion %>
+      <%= f.hidden_field :target, value: @suggestion.target %>
+      <%= f.hidden_field :title, value: @suggestion.title %>
+      <%= f.hidden_field :body, value: @suggestion.body %>
+      <%= f.hidden_field :local, value: @suggestion.local %>
+    <% end %>
     <p><%= f.label :email %>
-      <%= f.text_field :email, value: params[:user][:email] %> 
+      <% if params[:user] && params[:user][:email] %>
+        <%= f.text_field :email, value: params[:user][:email] %>
+      <% else %>
+        <%= f.text_field :email, autofocus: true %>
+      <% end %>
         <span class="error">
           <% unless @errors[:email].nil? %>
             <% @errors[:email].uniq.each do |error| %>
