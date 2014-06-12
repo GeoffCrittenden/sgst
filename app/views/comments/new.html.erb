@@ -4,8 +4,8 @@
     <p><%= f.label :body %>
       <%= f.text_area :body %>
     </p>
-    <p><%= f.label :vote %>
-      <%= f.check_box :vote, checked_value: -1, unchecked_value: 1 %>
+    <p><%= f.label :critical_comment? %>
+      <%= f.check_box :vote, checked_value: 0, unchecked_value: 1 %>
     </p>
     <p><%= f.submit 'Submit Your Comment!' %></p>
   <% end %>
