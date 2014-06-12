@@ -6,7 +6,13 @@
   <p><%= @suggestion.body %></p><br>
   <p>Comments:</p>
   <% @comments.each do |c| %>
-    <p><%= link_to raw("#{c.owner.first_name} #{c.owner.last_name}"), user_path(id: c.user_id) %> said:<br><%= c.body %></p>
+    <p class="comment">
+      <%= link_to raw("#{c.owner.first_name} #{c.owner.last_name}"), user_path(id: c.user_id) %> said:<br>
+      <% if c.vote == 0 %>
+        <span class="critical">critical</span> - 
+      <% end %>
+      <%= c.body %>
+    </p>
   <% end %>
 
   <p>
