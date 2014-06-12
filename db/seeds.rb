@@ -13,14 +13,20 @@
               location: "#{Faker::Address.city}, #{Faker::Address.state_abbr}",
               password: 'password',
               password_confirmation: 'password')
+end
+100.times do |n|
   Suggestion.create(user_id: n + 1,
                     target: Faker::Company.name,
                     title: Faker::Lorem.sentence,
                     body: Faker::Lorem.paragraph,
-                    score: rand(1..100),
+                    score: 1,
                     local: [true,false].shuffle[0])
+end
+100.times do |n|
   Comment.create(user_id: rand(1..100),
                  suggestion_id: rand(1..100),
                  vote: [1,-1].shuffle[0],
                  body: Faker::Lorem.paragraph)
 end
+
+Suggestion.all.each { |s| s.update_score! }
