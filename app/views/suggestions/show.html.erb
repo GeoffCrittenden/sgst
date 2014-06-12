@@ -1,5 +1,5 @@
 <div class="container">
-  <h2><%= @suggestion.title %></h2>
+  <h2><%= "#{@suggestion.title} " %>(<span class="score"><%= "#{@suggestion.score.to_f / @suggestion.comments.count * 100}%" %></span>)</h2>
   <h3>by <%= link_to raw("#{@suggestion.owner.first_name} #{@suggestion.owner.last_name}"), user_path(id: @suggestion.user_id) %></h3>
   <p>Target: <%= @suggestion.target %></p>
   <p>Suggestion:</p>
