@@ -9,4 +9,8 @@ class Suggestion < ActiveRecord::Base
   validates :body, presence: { message: 'required' }
   validates :score, presence: { message: 'required' }
 
+  def update_score!
+    self.update_attributes(score: self.comments.map { |c| c.vote }.reduce(:+))
+  end
+
 end
