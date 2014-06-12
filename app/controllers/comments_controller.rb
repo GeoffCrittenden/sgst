@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
                               suggestion_id: params[:suggestion_id],
                               body: params[:comment][:body],
                               vote: params[:comment][:vote])
+    Suggestion.find(params[:suggestion_id]).update_score!
     redirect_to "/suggestions/#{@comment.suggestion_id}"
   end
 end
