@@ -14,21 +14,23 @@
               password: 'password',
               password_confirmation: 'password')
 end
-4.times do
-  100.times do |n|
-    Suggestion.create(user_id: n + 1,
+
+User.all.each do |u|
+  4.times do
+    Suggestion.create(user_id: u.id,
                       target: Faker::Company.name,
                       title: Faker::Lorem.sentence,
                       body: Faker::Lorem.paragraph,
-                      score: 1,
+                      score: 0,
                       local: [true,false].shuffle[0])
   end
 end
-5.times do
-  100.times do |n|
+
+Suggestion.all.each do |s|
+  5.times do
     Comment.create(user_id: rand(1..100),
-                   suggestion_id: n + 1,
-                   vote: [1,-1].shuffle[0],
+                   suggestion_id: s.id,
+                   vote: [0,1].shuffle[0],
                    body: Faker::Lorem.paragraph)
   end
 end

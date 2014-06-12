@@ -10,7 +10,7 @@ class SuggestionsController < ApplicationController
                                  target: params[:suggestion][:target],
                                  title: params[:suggestion][:title],
                                  body: params[:suggestion][:body],
-                                 score: 1,
+                                 score: 0,
                                  local: params[:suggestion][:local])
     if @suggestion.save
       redirect_to "/suggestions/#{@suggestion.id}"
