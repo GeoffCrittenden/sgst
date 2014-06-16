@@ -4,11 +4,11 @@ Feature: user receives errors when incorrectly filling out suggestion form
   Should inform them with error messages
 
   Scenario: if a user creates a suggestion while not logged in
-    When a user is not lgged in
+    When a user is not logged in
     When they submit a suggestion
     Then they are told to login or create an acocunt
 
   Scenario: if a user enters blank info
-    When a user submits a blank signup form
+    When a user submits a blank suggestion form
     Then no suggestion is created
-    And they receive error messages
+    And they receive the appropriate error messages
