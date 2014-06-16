@@ -12,10 +12,12 @@
       <div class="welcome">
         <p>Welcome to Suggestion Box, a place where you can create meaningful suggestions intended for almost any target entity.  Suggestion Box is a community of passionate users seeking to make the world a better place.</p>
         <p>Once you create a suggestion, it is not immediately sent off.  Only after gathering some useful feedback for your suggestion can you submit it to your target audience for consideration.  This way, the suggestion has more meaning and the full weight of a community behind it.</p>
-        <% if session[:current_user_id] %>
-          <%= link_to raw("<button>Create Your Next Great Suggestion!</button>"), new_suggestion_path %>
-        <% else %>
-          <%= link_to raw("<button>Create Your First Suggestion!</button>"), new_suggestion_path %>
+        <%= form_for :suggestion, url: new_suggestion_path, method: :get do |f| %>
+          <% if session[:current_user_id] %>
+            <%= f.submit 'Create Your Next Great Suggestion!' %>
+          <% else %>
+            <%= f.submit "Create Your First Suggestion!" %>
+          <% end %>
         <% end %>
       </div>
     </div>
