@@ -23,5 +23,5 @@ Then(/^they should be able to submit a Suggestion form$/) do
 end
 
 Then(/^that Suggestion now exists$/) do
-  pending # express the regexp above with the code you wish you had
+  Suggestion.last.target.should == 'Target Entity'
 end
