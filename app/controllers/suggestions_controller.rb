@@ -15,7 +15,6 @@ class SuggestionsController < ApplicationController
     if @suggestion.save
       redirect_to "/suggestions/#{@suggestion.id}"
     elsif @suggestion.errors.count == 1 && @suggestion.errors[:user_id]
-      p @suggestion.errors
       @message = "Welcome to Suggestion Box.  Please create an account to post your Suggestion."
       render('users/signup')
     else
